@@ -1,5 +1,5 @@
 class BaseMailer < ActionMailer::Base
-  # include AMQPQueue::Mailer
+  include AMQPQueue::Mailer
 
   layout 'mailers/application'
   add_template_helper MailerHelper

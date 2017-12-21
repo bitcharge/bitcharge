@@ -7,7 +7,7 @@ GIT
       sass (>= 3.2)
 
 GIT
-  remote: git://github.com/peatio/mina-slack.git
+  remote: git://github.com/wd1/mina-slack.git
   revision: 5b7571a34f1979784720c0bfef555591e89ca3a7
   specs:
     mina-slack (0.0.3)
@@ -15,7 +15,7 @@ GIT
       rest-client (~> 1.6.7)
 
 GIT
-  remote: git://github.com/peatio/unread.git
+  remote: git://github.com/wd1/unread.git
   revision: b8fa0502e9558c93388a104bcbe20376cf43027d
   specs:
     unread (0.4.0)
@@ -156,6 +156,7 @@ GEM
     erubi (1.7.0)
     erubis (2.7.0)
     eventmachine (1.0.9.1)
+    excon (0.60.0)
     execjs (2.7.0)
     factory_girl (4.9.0)
       activesupport (>= 3.0.0)
@@ -174,7 +175,7 @@ GEM
     globalize (4.0.3)
       activemodel (>= 4.0.0, < 5)
       activerecord (>= 4.0.0, < 5)
-    gon (5.2.3)
+    gon (5.2.0)
       actionpack (>= 2.3.0)
       json
       multi_json
@@ -469,12 +470,13 @@ DEPENDENCIES
   em-websocket (~> 0.5.1)
   enumerize (= 1.1.1)
   eventmachine (~> 1.0.4)
+  excon
   factory_girl_rails
   faker (~> 1.4.3)
   figaro
   font-awesome-sass
   globalize (~> 4.0.0)
-  gon (~> 5.2.0)
+  gon (= 5.2.0)
   grape (~> 0.7.0)
   grape-entity (~> 0.4.2)
   grape-swagger (~> 0.7.2)

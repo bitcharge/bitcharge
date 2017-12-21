@@ -1,3 +1,3 @@
-module Peatio
+module Myexchangepea
   VERSION = "0.2.1"
 end

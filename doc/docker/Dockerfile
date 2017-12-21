@@ -1,5 +1,5 @@
 FROM phusion/passenger-full
-MAINTAINER PEATIO community@peatio.com
+MAINTAINER Myexchangepea community@myexchangepea.com
 
 # Set correct environment variables.
 ENV HOME /root
@@ -10,32 +10,32 @@ CMD ["/sbin/my_init"]
 RUN apt update
 RUN apt-get -y install imagemagick gsfonts
 
-ADD peatio /home/app/peatio
-RUN chown -R app:app /home/app/peatio
+ADD myexchangepea /home/app/myexchangepea
+RUN chown -R app:app /home/app/myexchangepea
 
 USER app
 ENV HOME /home/app
 
-WORKDIR /home/app/peatio
+WORKDIR /home/app/myexchangepea
 RUN bundle install --without development test --path vendor/bundle
 
 # RUN ./bin/init_config
-ADD conf/rails-amqp.yml /home/app/peatio/config/amqp.yml
-ADD conf/rails-database.yml /home/app/peatio/config/database.yml
-ADD conf/rails-application.yml /home/app/peatio/config/application.yml
-ADD conf/nginx-peatio-env.conf /etc/nginx/main.d/peatio-env.conf
+ADD conf/rails-amqp.yml /home/app/myexchangepea/config/amqp.yml
+ADD conf/rails-database.yml /home/app/myexchangepea/config/database.yml
+ADD conf/rails-application.yml /home/app/myexchangepea/config/application.yml
+ADD conf/nginx-myexchangepea-env.conf /etc/nginx/main.d/myexchangepea-env.conf
 
 USER root
 
 RUN rm /etc/nginx/sites-enabled/default
-ADD conf/nginx-peatio-with-ssl.conf /etc/nginx/sites-available/peatio
-RUN ln -s /etc/nginx/sites-available/peatio /etc/nginx/sites-enabled/peatio
+ADD conf/nginx-myexchangepea-with-ssl.conf /etc/nginx/sites-available/myexchangepea
+RUN ln -s /etc/nginx/sites-available/myexchangepea /etc/nginx/sites-enabled/myexchangepea
 
 RUN mkdir /etc/nginx/ssl_keys/
 ADD conf/ssl_keys/server.crt /etc/nginx/ssl_keys/server.crt
 ADD conf/ssl_keys/server.key /etc/nginx/ssl_keys/server.key
 
-RUN chown -R app:app /home/app/peatio/config
+RUN chown -R app:app /home/app/myexchangepea/config
 
 RUN rm -f /etc/service/nginx/down
 

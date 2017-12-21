@@ -6,7 +6,7 @@ class ActionDispatch::Routing::Mapper
   end
 end
 
-Peatio::Application.routes.draw do
+Myexchangepea::Application.routes.draw do
   use_doorkeeper
 
   root 'welcome#index'

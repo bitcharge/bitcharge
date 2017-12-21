@@ -18,7 +18,7 @@ module Worker
     end
 
     def key_for(period)
-      "peatio:stats:wallet:#{@currency.code}:#{period}"
+      "myexchangepea:stats:wallet:#{@currency.code}:#{period}"
     end
 
     def point_n(from, period)

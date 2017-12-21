@@ -38,7 +38,7 @@ class EventHandler
 
   processWithoutAjax: =>
     args = arguments
-    PeatioModel.Ajax.disable =>
+    MyexchangepeaModel.Ajax.disable =>
       @process(args...)
 
   create: (attributes) =>

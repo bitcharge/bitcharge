@@ -516,25 +516,25 @@ makeArray = (args) ->
 
 # Globals
 
-PeatioModel = @PeatioModel= {}
-module?.exports  = PeatioModel
+MyexchangepeaModel = @MyexchangepeaModel= {}
+module?.exports  = MyexchangepeaModel
 
-PeatioModel.version    = '1.3.2.customizatiion'
-PeatioModel.isArray    = isArray
-PeatioModel.isBlank    = isBlank
-PeatioModel.$          = $
-PeatioModel.Events     = Events
-PeatioModel.Log        = Log
-PeatioModel.Module     = Module
-PeatioModel.Model      = Model
+MyexchangepeaModel.version    = '1.3.2.customizatiion'
+MyexchangepeaModel.isArray    = isArray
+MyexchangepeaModel.isBlank    = isBlank
+MyexchangepeaModel.$          = $
+MyexchangepeaModel.Events     = Events
+MyexchangepeaModel.Log        = Log
+MyexchangepeaModel.Module     = Module
+MyexchangepeaModel.Model      = Model
 
 # Global events
 
-Module.extend.call(PeatioModel, Events)
+Module.extend.call(MyexchangepeaModel, Events)
 
 Model.setup = (name, attributes = []) ->
   class Instance extends this
   Instance.configure(name, attributes...)
   Instance
 
-PeatioModel.Class = Module
+MyexchangepeaModel.Class = Module

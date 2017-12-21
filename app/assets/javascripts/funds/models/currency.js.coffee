@@ -1,8 +1,8 @@
-class Currency extends PeatioModel.Model
+class Currency extends MyexchangepeaModel.Model
   @configure 'Currency', 'key', 'code', 'coin', 'blockchain'
 
   @initData: (records) ->
-    PeatioModel.Ajax.disable ->
+    MyexchangepeaModel.Ajax.disable ->
       $.each records, (idx, record) ->
         currency = Currency.create(record.attributes)
 
