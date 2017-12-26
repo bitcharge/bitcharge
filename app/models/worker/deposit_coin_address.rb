@@ -7,6 +7,8 @@ module Worker
       payment_address = PaymentAddress.find payload[:payment_address_id]
       return if payment_address.address.present?
 
+      puts "Deposit CoinAddress"
+      puts payload[:currency]
       currency = payload[:currency]
       address  = CoinRPC[currency].getnewaddress("payment")
 

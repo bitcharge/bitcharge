@@ -42,6 +42,7 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
         .error (responseText) ->
           $.publish 'flash', {message: responseText }
         .finally ->
+          console.log(I18n.t("funds.deposit_coin.new_address"));
           $("a#new_address").html(I18n.t("funds.deposit_coin.new_address"))
           $("a#new_address").attr('disabled', 'disabled')
 

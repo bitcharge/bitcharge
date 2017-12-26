@@ -307,6 +307,11 @@ zh-CN:
       code: CNY
       name: 人民币
       format: '0,0.00'
+    rupee:
+      key: INR
+      code: INR
+      name: Indian Rupee
+      format: '0,0.00'
     dogecoin:
       key: DOG
       code: DOGE

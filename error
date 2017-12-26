@@ -95,6 +95,9 @@ walletnotify=/usr/local/sbin/rabbitmqadmin publish routing_key=myexchangepea.dep
 and then start Bitcoind with
 
 open /Applications/Bitcoin-Qt.app
+
+
+///Onproduction server original passenger_ruby-> passenger_ruby /usr/bin/passenger_free_ruby;
 7. Install PhantomJS
 
 Myexchangepea uses Capybara with PhantomJS to do the feature tests, so if you want to run the tests. Install the PhantomJS is neccessary.

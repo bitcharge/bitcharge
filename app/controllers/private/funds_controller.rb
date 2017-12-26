@@ -20,6 +20,7 @@ module Private
     end
 
     def gen_address
+      puts 'fund/gen_address'
       current_user.accounts.each do |account|
         next if not account.currency_obj.coin?
 

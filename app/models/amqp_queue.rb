@@ -17,20 +17,20 @@ class AMQPQueue
 
     def exchange(id)
       puts "exchange"
-      puts AMQPConfig.exchange(id)
+      puts exchanges[id]
       exchanges[id] ||= channel.send *AMQPConfig.exchange(id)
     end
 
     def publish(eid, payload, attrs={})
       payload = JSON.dump payload
       puts "pusblish"
-      puts exchange(eid)
-      
+      puts eid      
       exchange(eid).publish(payload, attrs)
     end
 
     # enqueue = publish to direct exchange
     def enqueue(id, payload, attrs={})
+      puts id
       eid = AMQPConfig.binding_exchange_id(id) || :default
       payload.merge!({locale: I18n.locale})
       attrs.merge!({routing_key: AMQPConfig.routing_key(id)})
@@ -38,7 +38,6 @@ class AMQPQueue
       puts (eid)
       puts (payload)
       puts  (attrs)
-      puts connection.queue_exists?("myexchangepea.notification.email")
       publish(eid, payload, attrs)
     end
   end

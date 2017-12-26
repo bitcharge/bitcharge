@@ -11,6 +11,8 @@ class PaymentAddress < ActiveRecord::Base
   def gen_address
     payload = { payment_address_id: id, currency: currency }
     attrs   = { persistent: true }
+    puts id
+    puts "GenAddress on PaymentAddress"
     AMQPQueue.enqueue(:deposit_coin_address, payload, attrs)
   end
 
@@ -30,6 +32,7 @@ class PaymentAddress < ActiveRecord::Base
   end
 
   def trigger_deposit_address
+    puts 'trigger_deposit_address'
     ::Pusher["private-#{account.member.sn}"].trigger_async('deposit_address', {type: 'create', attributes: as_json})
   end
 

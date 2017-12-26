@@ -136,6 +136,11 @@ ru_RU:
     renminbi:
       key: CNY
       code: CNY
+    rupee:
+      key: INR
+      code: INR
+      name: Indian Rupee
+      format: '0,0.00'
   datagrid:
     admin_deposits_grid:
       columns:

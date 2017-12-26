@@ -19,7 +19,7 @@ module Worker
       mobiles = Phonelib.parse(payload[:phone]).national
       puts Phonelib.parse(payload[:phone]).national
       puts Phonelib.parse(payload[:phone]).international
-
+      mobiles = mobiles.delete(' ')
       raise ArgumentError, 'Please set authkey, sender, route && country for MSG91 API' unless authkey && sender && route && country
 
       params = { :authkey => authkey, :mobiles => mobiles, :message => payload[:message], 

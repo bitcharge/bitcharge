@@ -312,6 +312,11 @@ en:
       code: CNY
       name: Chinese Yuan
       format: '0,0.00'
+    rupee:
+      key: INR
+      code: INR
+      name: Indian Rupee
+      format: '0,0.00'
     dogecoin:
       key: DOG
       code: DOGE
@@ -1475,7 +1480,7 @@ en:
   'true': true
   'false': false
   view_on_github: View on Github
-  slogan: An open-source crypto-currency exchange for world.
+  slogan: We provide the best stable exchange technology in the world.
   tags:
     vip: VIP
     hero: Hero Member
