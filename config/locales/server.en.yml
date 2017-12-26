@@ -1703,9 +1703,9 @@ en:
     application:
       close: Close
     meta:
-      page_title: Peatio - The Opensource Cryptocurrency Exchange
-      page_description: Peatio - The Opensource Cryptocurrency Exchange
-      page_keywords: Peatio,Opensource,Exchange,Cryptocurrency
+      page_title: Bitcharge Exchange Market
+      page_description: Bitcharge Exchange Market
+      page_keywords: Bitcharge Exchange Market
   members:
     edit:
       name: Please fill out the application.

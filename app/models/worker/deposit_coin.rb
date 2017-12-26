@@ -5,7 +5,8 @@ module Worker
       payload.symbolize_keys!
 
       sleep 0.5 # nothing result without sleep by query gettransaction api
-
+      puts 'depositcoin process process'
+      puts payload
       channel_key = payload[:channel_key]
       txid = payload[:txid]
 
@@ -28,7 +29,8 @@ module Worker
         end
 
         return if PaymentTransaction::Normal.where(txid: txid, txout: txout).first
-
+        Rails.logger.info "txid: #{txid}, txout: #{txout}, address: #{detail[:address]}, amount: #{detail[:amount]},confirmations: #{raw[:confirmations]}"
+        puts "txid: #{txid}, txout: #{txout}, address: #{detail[:address]}, amount: #{detail[:amount]},confirmations: #{raw[:confirmations]}"
         tx = PaymentTransaction::Normal.create! \
           txid: txid,
           txout: txout,
